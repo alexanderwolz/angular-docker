@@ -1,7 +1,7 @@
 FROM node:alpine3.17
 LABEL maintainer="mail@alexanderwolz.de"
 
-RUN apk update && apk add --no-cache bash git \
+RUN apk update && apk add --no-cache bash git curl \
     && deluser --remove-home node \
     && addgroup -S -g 1000 angular \
     && adduser -S -u 1000 angular -G angular \
@@ -11,5 +11,7 @@ RUN apk update && apk add --no-cache bash git \
 WORKDIR /app
 
 USER angular
+
+ENV NG_CLI_ANALYTICS=false
 
 CMD ["ng"]

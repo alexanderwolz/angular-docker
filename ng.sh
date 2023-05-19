@@ -29,4 +29,4 @@ else
     CMD="ng $@"
 fi
 
-docker run --rm --name $IMAGE_NAME -it -p 4200:4200 -v $PWD:/app:rw -h $IMAGE_NAME $IMAGE_NAME $CMD
+docker run --rm --name $IMAGE_NAME -it -p 4200:4200 -v $PWD:/app:rw -v ~/.gitconfig:/home/angular/.gitconfig:ro -h $IMAGE_NAME $IMAGE_NAME $CMD

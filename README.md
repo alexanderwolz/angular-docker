@@ -13,4 +13,8 @@ This repository holds a Dockerfile to provide the needed toolchain for building 
 # Environmental Setup
 The Angular CLI is wrapped inside the Docker container and can be easily accessed using ```bash ng.sh```.
 
-Adding an ```alias ng="bash myfolder/angular_builder/ng.sh"``` to the environment profile (e.g. *~/.zshrc*), the CLI can be used as if it is installed locally
+## Wrapping in an Alias
+Adding an ```alias ng="bash myfolder/angular_builder/ng.sh"``` to the environment profile (e.g. *~/.zshrc*), the Angular CLI can be used as if it is installed locally
+
+## Running ng serve
+Because ng serve does not bind to an open connection by default (as we need in a Docker container), we have to start the command with the *--host* flag: e.g. ```ng serve --host 0.0.0.0 --disable-host-check```
