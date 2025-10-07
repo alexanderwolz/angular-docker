@@ -27,6 +27,9 @@ if [ $1 = "bash" ]; then
     echo "[INFO] Executing Bash into Container"
     echo ""
     CMD="bash"
+elif [ $1 = "run" ]; then
+    echo "[INFO] Executing custom run script /serve.sh"
+    CMD="bash /serve.sh"
 elif [ $1 = "serve" ]; then
     CMD="ng $@ --host 0.0.0.0"
     echo "[INFO] Executing Angluar CLI -> $CMD"
