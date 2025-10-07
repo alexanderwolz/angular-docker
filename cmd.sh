@@ -24,8 +24,13 @@ fi
 CMD=$@
 
 if [ $1 = "bash" ]; then
+    echo "executing bash into container"
     CMD="bash"
+elif [ $1 = "npm" ]; then
+    echo "using npm"
+    CMD="$@"
 else
+    echo "just executing angular cli"
     CMD="ng $@"
 fi
 
