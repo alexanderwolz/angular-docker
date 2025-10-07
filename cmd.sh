@@ -30,8 +30,8 @@ if [ $1 = "bash" ]; then
 elif [ $1 = "run" ]; then
     echo "[INFO] Executing custom run script /serve.sh"
     CMD="bash /serve.sh"
-elif [ $1 = "serve" ]; then
-    CMD="ng $@ --host 0.0.0.0"
+elif [ $1 = "ng" ]; then
+    CMD="ng $@"
     echo "[INFO] Executing Angluar CLI -> $CMD"
 else
     echo "[INFO] Executing command: '$CMD'"
