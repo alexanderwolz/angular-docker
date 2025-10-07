@@ -8,7 +8,7 @@ fi
 
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" >/dev/null 2>&1 && pwd)"
 PARENT_DIR="$(dirname $SCRIPT_DIR)"
-IMAGE_NAME="angular_builder"
+IMAGE_NAME="angular"
 
 docker ps -q >/dev/null 2>&1 # check if docker is running
 if [ "$?" -ne 0 ]; then
