@@ -24,15 +24,16 @@ fi
 CMD=$@
 
 if [ $1 = "bash" ]; then
-    echo "executing bash into container"
+    echo "[INFO] Executing Bash into Container"
+    echo ""
     CMD="bash"
-elif [ $1 = "npm" ]; then
-    echo "using npm"
-    CMD="$@"
+elif [ $1 = "serve" ]; then
+    CMD="ng $@ --host 0.0.0.0"
+    echo "[INFO] Executing Angluar CLI -> $CMD"
 else
-    echo "just executing angular cli"
-    CMD="ng $@"
+    echo "[INFO] Executing command: '$CMD'"
 fi
+
 
 docker ps | grep $IMAGE_NAME > /dev/null
 if [ "$?" -eq 0 ]; then
