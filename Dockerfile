@@ -1,4 +1,4 @@
-FROM node:24.9.0-alpine3.21
+FROM node:26.1.0-alpine3.23
 LABEL maintainer="mail@alexanderwolz.de"
 
 RUN apk update && apk add --no-cache bash git curl \
